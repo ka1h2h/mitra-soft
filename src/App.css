@@ -1,0 +1,12 @@
+body {
+    margin: auto;
+    padding: auto;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.avatar {
+    margin-left: 3px;
+    background-repeat: no-repeat;
+}
+
