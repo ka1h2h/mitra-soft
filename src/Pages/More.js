@@ -1,21 +1,23 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams, Link } from 'react-router-dom'
-import { requestPhotosId } from './../Redux/Action'
+import { fetchPhotosById } from './../Redux/Action'
 
 const More = () => {
 
     const { id } = useParams()
     const dispatch = useDispatch()
-    const store = useSelector(state => state.carsById)
+    const store = useSelector(state => state.photosById)
     const loader = useSelector(state => state.loaderId)
 
     useEffect(() => {
         const timer = setTimeout(() => {
-            dispatch(requestPhotosId(id))
+            dispatch(fetchPhotosById(id))
         }, 1000);
         return () => clearTimeout(timer);
     }, [id]);
+
+
 
     return (
         <div className='containerbyid vh-100 d-flex justify-content-center align-items-center '>

@@ -1,9 +1,8 @@
-const GET_PHOTOS = 'GET_PHOTOS'
-const GET_PHOTOS_BY_ID = 'GET_PHOTOS_BY_ID'
+import { GET_PHOTOS, GET_PHOTOS_BY_ID } from "./Action"
 
 const initialState = {
-    cars: [],
-    carsById: [],
+    photos: [],
+    photosById: [],
     loader: true,
     loaderId: true,
 }
@@ -13,14 +12,14 @@ export const Reducer = (state = initialState, action) => {
         case GET_PHOTOS:
             return {
                 ...state,
-                cars: action.payload,
+                photos: action.payload,
                 loader: false,
                 loaderId: true
             }
         case GET_PHOTOS_BY_ID:
             return {
                 ...state,
-                carsById: action.payload,
+                photosById: action.payload,
                 loaderId: false
             }
         default:
@@ -28,8 +27,6 @@ export const Reducer = (state = initialState, action) => {
     }
 }
 
-export const setCarsPhotos = (payload) => ({ type: GET_PHOTOS, payload });
-export const setPhotosById = (payload) => ({ type: GET_PHOTOS_BY_ID, payload })
 
 
 

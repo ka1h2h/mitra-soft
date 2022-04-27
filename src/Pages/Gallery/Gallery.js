@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { requestCars } from '../../Redux/Action'
+import { fetchPhotos } from './../../Redux/Action'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import './Gallery.css'
@@ -9,12 +9,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const Gallery = () => {
 
     const dispatch = useDispatch()
-    const store = useSelector(state => state.cars)
+    const store = useSelector(state => state.photos)
     const loader = useSelector(state => state.loader)
 
     useEffect(() => {
         const timer = setTimeout(() => {
-            dispatch(requestCars())
+            dispatch(fetchPhotos())
         }, 1000);
         return () => clearTimeout(timer);
     }, []);
@@ -43,9 +43,6 @@ const Gallery = () => {
                 </div>
             )}
         </div>
-
-
-
     )
 
 }

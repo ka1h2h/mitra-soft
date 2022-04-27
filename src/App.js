@@ -6,12 +6,10 @@ import About from "./Pages/About";
 import More from "./Pages/More"
 
 
-function App() {
+const App = () => {
 
   return (
     <BrowserRouter>
-
-
       <Navibar />
       <div className="vh-100 bg-light">
         <Routes>
